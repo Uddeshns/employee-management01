@@ -1,0 +1,58 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Employee Management System</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
+            
+            <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#addEmployee" type="submit">Add Employee</button>
+          </div>
+        </div>
+      </nav>
+  <!-- Add Employee Modal -->
+  <div class="modal fade" id="addEmployee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">New Employee</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="empDetail">
+
+            <div class="mb-3 row">
+                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                  <input type="text" formControlName="inputName" class="form-control" id="inputName">
+                </div>
+              </div>
+
+              <div class="mb-3 row">
+                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" formControlName="inputEmail" class="form-control" id="inputEmail">
+                </div>
+              </div>
+
+              <div class="mb-3 row">
+                <label for="inputSalary" class="col-sm-2 col-form-label">Salary</label>
+                <div class="col-sm-10">
+                  <input type="text" formControlName="inputSalary" class="form-control" id="inputSalary">
+                </div>
+              </div>
+              
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="addEmployee()">Save</button>
+              </div>
+
+            </form> 
+      
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
